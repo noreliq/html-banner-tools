@@ -6,7 +6,8 @@ var Q = require("q"),
 
 var defaults = {
 	kilobytes:40,
-	border:false
+	border:false,
+	format:"jpg"
 }
 
 function convertImages(data){
