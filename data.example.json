@@ -7,7 +7,9 @@
         {
             "id":"popsugar-mrec",
             "extends":null,
-            "description":{
+            "description":{ /* <-- The information in this object is used for outputting progress
+                                    in the terminal at runtime and also to generate the folder names
+                                    for all the output units */
                 "Creative":"NTC",
                 "Website":"Popsugar",
                 "Location":"Takeover",
@@ -18,25 +20,41 @@
                 "html":{
                     "shell":"media/shell.html",
                     "source":"media/html/",
-                    "replace":{
+                    "replace":{ /* <-- the keys of this object will be replaced with the
+                                            corresponding values inside any css/js/html
+                                            file found in the source folder */
                         "%banner_width%":300,
                         "%banner_height%":250,
                         "%banner_loops%":1
                     }
                 },
                 "videos": {
-                    "video": {
+                    "video": { /* <-- this key can be anything - it will also become the
+                                        the filename of the output video. For example
+                                        this will produce video.mp4, video.webm and video.ogg */
                         "source":"media/video/pub/ntc_300x250.mp4",
-                        "removeAudio":true,
-                        "videoRatioPercent":1,
-                        "seconds":30,
-                        "megabytes":1
+                        "removeAudio":true, /* <-- This can be ommited - it defaults to false */
+                        "fps": 24, /* <-- this can be ommited - defaults to source fps */
+                        "videoRatioPercent":0.8, /* <-- the percentage of the bitrate to allocate
+                                                        to video - the remainder will be allocated
+                                                        to the audio (if no audio, video ratio 
+                                                        is always 1) */
+                        "seconds":30, /* <-- for validation purposes only - if ommited it 
+                                            will skip duration validation */
+                        "megabytes":1 /* <-- this will force the generated videos to be this size
+                                                can be ommited - will default to 2*/
                     }
                 },
                 "images":{
-                    "backup":{
+                    "backup":{ /* <-- this key can be anything - it will also become the filename
+                                        of the output image. For example, this will produce
+                                        backup.jpg  - note the extension will match the
+                                        source extension*/
                         "source":"media/statics-assets/ntc_300x250.jpg",
-                        "kilobytes":40
+                        "kilobytes":40, /* <-- this will limit the output file to this size 
+                                                can be ommited - will default to 40 */
+                        "border":true, /* <-- Adds a 1px black border around the image - default is false */
+                        "format":"jpg" /* <-- Sets the image format to output - if not set, uses same as source */
                     }
                 }
             }
@@ -44,7 +62,9 @@
 
         {
             "id":"popsugar-halfpage",
-            "extends":"popsugar-mrec",
+            "extends":"popsugar-mrec", /* <-- If this is set, it will extend the corresponding unit
+                                    that matches this ID - but with any overriden values
+                                    from the config on this object */
             "description":{
                 "Size":"300x600",
                 "Type":"HalfPage"

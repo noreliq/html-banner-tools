@@ -6,3 +6,5 @@ This is a work in progress - with the eventual goal of turning into an NPM packa
 ## To do list
 * Allow passing of data json file as commandline param
 * Write up documentation
+* Finish logger util
+* Output better progress events in commandline
