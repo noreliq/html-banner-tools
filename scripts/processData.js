@@ -14,8 +14,7 @@ var defaults = {
         config:{
             html:{},
             videos:{},
-            images:{},
-            replace:{}
+            images:{}
         }
     }
 };
