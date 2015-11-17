@@ -1,0 +1,17 @@
+{
+    "name": "html5-videobanner-automation",
+    "version" : "0.0.1",
+    "description" : "Build HTML5 video banners from a structured folder of assets",
+    "author": "Abe Ribeiro",
+
+    "dependencies": {
+        "fs-extra": "0.26.x",
+        "replace": "0.3.x",
+        "fluent-ffmpeg": "*",
+        "q":"*",
+        "object-merge":"*",
+        "colours":"*",
+        "imagemagick":"*",
+        "html-minifier":"*"
+    }
+}

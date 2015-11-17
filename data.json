@@ -1,0 +1,146 @@
+{
+    "outputDestination":"pub/",
+    "ffmpegBinary":"./../ffmpeg/bin/ffmpeg.exe",
+    "ffprobeBinary":"./../ffmpeg/bin/ffprobe.exe",
+
+    "units":[
+        {
+            "id":"popsugar-mrec",
+            "extends":null,
+            "description":{
+                "Creative":"NTC",
+                "Website":"Popsugar",
+                "Location":"Takeover",
+                "Size":"300x250",
+                "Type":"MREC"
+            },
+            "config":{
+                "html":{
+                    "shell":"media/shell.html",
+                    "source":"media/html/",
+                    "replace":{
+                        "%banner_width%":300,
+                        "%banner_height%":250,
+                        "%banner_loops%":1
+                    }
+                },
+                "videos": {
+                    "video": {
+                        "source":"media/video/pub/ntc_300x250.mp4",
+                        "removeAudio":true,
+                        "videoRatioPercent":1,
+                        "seconds":30,
+                        "megabytes":1
+                    }
+                },
+                "images":{
+                    "backup":{
+                        "source":"media/statics-assets/ntc_300x250.jpg",
+                        "kilobytes":40
+                    }
+                }
+            }
+        },
+
+        {
+            "id":"popsugar-halfpage",
+            "extends":"popsugar-mrec",
+            "description":{
+                "Size":"300x600",
+                "Type":"HalfPage"
+            },
+            "config":{
+                "html":{
+                    "replace": {
+                        "%banner_height%":600
+                    }
+                },
+                "videos": {
+                    "video": {
+                        "source":"media/video/pub/ntc_300x600.mp4"
+                    }
+                },
+                "images":{
+                    "backup":{
+                        "source":"media/statics-assets/ntc_300x600.jpg"
+                    }
+                }
+            }
+
+        },
+
+        {
+            "id":"popsugar-leaderboard",
+            "extends":"popsugar-mrec",
+            "description":{
+                "Size":"728x90",
+                "Type":"Leaderboard"
+            },
+            "config":{
+                "html":{
+                    "replace": {
+                        "%banner_width%":728,
+                        "%banner_height%":90
+                    }
+                },
+                "videos": {
+                    "video": {
+                        "source":"media/video/pub/ntc_728x90.mp4"
+                    }
+                },
+                "images":{
+                    "backup":{
+                        "source":"media/statics-assets/ntc_728x90.jpg"
+                    }
+                }
+            }
+
+        },
+
+
+        {
+            "id":"popsugar-inter",
+            "extends":"popsugar-mrec",
+            "description":{
+                "Size":"550x550",
+                "Type":"Interstitial"
+            },
+            "config":{
+                "html":{
+                    "replace": {
+                        "%banner_width%":550,
+                        "%banner_height%":550
+                    }
+                },
+                "videos": {
+                    "video": {
+                        "source":"media/video/pub/ntc_550x550.mp4"
+                    }
+                },
+                "images":{
+                    "backup":{
+                        "source":"media/statics-assets/ntc_550x550.jpg"
+                    }
+                }
+            }
+
+        },
+
+
+        {
+            "id":"pedestrian-mrec",
+            "extends":"popsugar-mrec",
+            "description":{
+                "Website":"Pedestrian"
+            },
+            "config":{
+                "images":{
+                    "backup":{
+                        "kilobytes":49
+                    }
+                }
+            }
+
+        }
+    ]
+}
