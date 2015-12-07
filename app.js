@@ -41,9 +41,9 @@ function loadFiles(){
 
 loadFiles()
 .then(processData)
-//.then(buildHTML)
-//.then(buildImages)
-//.then(buildVideos)
+then(buildHTML)
+.then(buildImages)
+.then(buildVideos)
 .catch(handleError);
 
 
