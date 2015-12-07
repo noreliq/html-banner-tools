@@ -1,17 +1,19 @@
 {
-    "name": "html5-videobanner-automation",
+    "name": "html-banner-tools",
     "version" : "0.0.1",
     "description" : "Build HTML5 video banners from a structured folder of assets",
+    "keywords": ["banner", "html5", "video"],
+    "license" : "SEE LICENSE IN <LICENSE>",
     "author": "Abe Ribeiro",
-
+    "repository" : { "type" : "git", "url" : "https://github.com/noreliq/html-banner-tools.git" },
     "dependencies": {
-        "fs-extra": "0.26.x",
-        "replace": "0.3.x",
+        "fs-extra": "0.26.x",        
         "fluent-ffmpeg": "*",
         "q":"*",
         "object-merge":"*",
         "colours":"*",
         "imagemagick":"*",
-        "html-minifier":"*"
+        "html-minifier":"*",
+        "minimist":"1.2.x"
     }
 }

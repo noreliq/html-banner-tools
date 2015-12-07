@@ -1,7 +1,7 @@
 module.exports = function(data){
-	data = data.toString();	
+	data = data.toString();		
 	// strip out comments
-	data = data.replace(/\/\*[^\*\/]*\*\//ig, "");		
+	data = data.replace(/\/\*[\s\S]*?\*\//g, "");	
 	data = JSON.parse(data);	
 	return data;
 }

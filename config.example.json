@@ -1,0 +1,5 @@
+{
+	"outputDestination":"pub/",
+    "ffmpegBinary":"./../ffmpeg/bin/ffmpeg.exe",
+    "ffprobeBinary":"./../ffmpeg/bin/ffprobe.exe"
+}
