@@ -5,6 +5,7 @@ var Q = require("q"),
     outputFile = require("./utils/outputFile.js"),
     loadAllFiles = require("./utils/loadAllFiles.js"),
     objectToArray = require("./utils/objectToArray.js"),
+    logger = require("./utils/logger.js"),
     readFileAsBuffer = require("./utils/readFileAsBuffer.js");
 
 
@@ -57,6 +58,18 @@ function loadFiles(unit){
         });
 }
 
+// replaces strings in the source string passed in and returns the new string
+// the replaceObject has all the keys and values to replace
+// i.e. ["var":"replace_with_this", "var":"replace_with_this"]
+function replaceStrings(source, replaceObject){    
+    Object.keys(replaceObject).forEach(function(key){
+        var value = replaceObject[key];
+        var regex = new RegExp(key, "g");
+        source = source.replace(regex, value);
+    });
+    return source;
+}
+
 // performs the variable replace for all the text files that were loaded
 // minifies and concats everything
 // outputs to index.html in the units outputFolder
@@ -74,13 +87,10 @@ function processFiles(unit){
 
 
     // REPLACE STRINGS
+    shellContents = replaceStrings(shellContents, replace);
     files.forEach(function(item){
         if(item.contents){
-            Object.keys(replace).forEach(function(key){
-                var value = replace[key];
-                var regex =  new RegExp(key, "g");
-                item.contents = item.contents.replace(regex, value);
-            });
+           item.contents = replaceStrings(item.contents, replace);
         }
     });
 
