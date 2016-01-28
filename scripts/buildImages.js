@@ -2,6 +2,7 @@ var Q = require("q"),
 	objectToArray = require("./utils/objectToArray.js"),
 	objectMerge = require("object-merge"),
 	getFileStats = require("./utils/getFileStats.js"),
+	logger = require("./utils/logger.js"),
 	convertImage = require("./convertImage.js");
 
 var defaults = {
