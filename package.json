@@ -14,6 +14,7 @@
         "colours":"*",
         "imagemagick":"*",
         "html-minifier":"*",
-        "minimist":"1.2.x"
+        "minimist":"1.2.x",
+        "easy-zip":"*"
     }
 }

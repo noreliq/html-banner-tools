@@ -3,6 +3,8 @@ var readFileAsBuffer = require("./scripts/utils/readFileAsBuffer.js"),
     buildVideos = require("./scripts/buildVideos.js"),
     buildImages = require("./scripts/buildImages.js"),
     buildHTML = require("./scripts/buildHTML.js"),
+    zipOutput = require("./scripts/zipOutput.js"),
+    generateLinks = require("./scripts/generateLinks.js"),
     processData = require("./scripts/processData.js");
 
 
@@ -41,8 +43,10 @@ function loadFiles(){
 
 loadFiles()
 .then(processData)
-then(buildHTML)
+.then(buildHTML)
 .then(buildImages)
+.then(zipOutput)
+.then(generateLinks)
 .then(buildVideos)
 .catch(handleError);
 
