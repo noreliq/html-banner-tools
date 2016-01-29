@@ -1,5 +1,8 @@
 {
 	"outputDestination":"pub/",
+	"zip":true, /* if set to true, this will create a zip file for each unit folder in the output folder */
+	"generateLinks":true, /* if set to true this will create a html file with relative links to each of the units */
+	"linkPrefix":"http://preview.vps.tundra.com.au/clients/HBF/rate-review-banners/", /* if generating links, this will be prepended to each */
     "ffmpegBinary":"./../ffmpeg/bin/ffmpeg.exe",
     "ffprobeBinary":"./../ffmpeg/bin/ffprobe.exe"
 }
