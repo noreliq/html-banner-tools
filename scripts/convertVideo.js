@@ -22,8 +22,8 @@ function transformConfig(config) {
 
             config.targetKilobits = config.megabytes * 8000; // 8000 = 1 megabyte in kilobits
             config.totalBitrate = config.targetKilobits / config.duration;
-            config.videoBitrate = config.videoRatioPercent * config.totalBitrate;
-            config.audioBitrate = (1 - config.videoRatioPercent) * config.totalBitrate;
+            config.videoBitrate = Math.round(config.videoRatioPercent * config.totalBitrate);
+            config.audioBitrate = Math.round((1 - config.videoRatioPercent) * config.totalBitrate);
 
             if(config.width && config.height){
                 config.size = config.width > config.height ? "?x" + config.height : config.width + "x?";
